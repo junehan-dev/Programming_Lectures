@@ -1,11 +1,12 @@
-Online Programming Lecture Problem Solving
-==========================================
+Online Programming Lectures
+===========================
 
 Index
 -----
    - HackerRank_
-      1. Problem Solving
-      #. C Programming
-      #. Algorithm
+      - Problem Solving
+      - C Programming
+      - Algorithm
+      - Data_Structure
 
 .. _HackerRank: ./HR/
