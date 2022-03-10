@@ -1,5 +1,5 @@
-Hackerrank Lecture Problem Solving
-==================================
+Hackerrank Lectures
+===================
 
 Index
 -----
@@ -8,7 +8,7 @@ Index
    - Algorithm_
    - Data_Structure_
 
-.. _Problem_Solving: ./PS/
-.. _C_programming: ./CP/
-.. _Algorithm: ./AL/
-.. _Data_Structure: ./DS/
+.. _Problem_Solving: ./PS
+.. _C_programming: ./CP
+.. _Algorithm: ./AL
+.. _Data_Structure: ./DS

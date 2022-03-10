@@ -1,5 +1,5 @@
-Online Programming Lecture Problem Solving
-==========================================
+Online Programming Lectures
+===========================
 
 Index
 -----
