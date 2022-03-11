@@ -13,4 +13,4 @@ Index
 
 .. _HangHae: ./HH/
 .. _HackerRank: ./HR/
-.. _BakeJoon: ./BJ/
+.. _BaekJoon: ./BJ/
