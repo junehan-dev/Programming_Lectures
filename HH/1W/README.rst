@@ -3,7 +3,7 @@ HangHae
 
 Index
 -----
-   - sum_strchr_
+   - find_max_strchr_
       Find duplicates characters from string.
 
-.. _sum_strchr: ./01_sum_strchr
+.. _find_max_strchr: ./01_find_max_strchr
