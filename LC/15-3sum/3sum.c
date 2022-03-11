@@ -10,12 +10,17 @@ int	main(int argc, const char *argv[])
 {
 	const char *in;
 	const char *out;
+	int			ret;
 
 	assert(argc == 2);
 	in = argv[1];
 	out = str_substr_max(in);
+	ret = substr_len(out);
+//
+	write(1, "MAX:", 4);
 	write(1, out, substr_len(out));
-	return (0);
+//
+	return (ret);
 }
 
 const char *str_substr_max(const char *in)
@@ -26,15 +31,16 @@ const char *str_substr_max(const char *in)
 	size_t		cur_len;
 	size_t		long_len;
 
-
 	long_len = 0;
 	cur = in;
 	longest = cur;
 	while (*cur) {
-		next = next_substr(cur);
+		next = cur + substr_len(cur);
 		cur_len = next - cur;
+//
 		write(1, cur, cur_len);
-		write(1, ":cur\n", 5);
+		write(1, ":checked\n", 9);
+//
 		if (cur_len > long_len) {
 			long_len = cur_len;
 			longest = cur;
@@ -45,11 +51,6 @@ const char *str_substr_max(const char *in)
 	return (longest);
 }
 
-const char	*next_substr(const char *start)
-{
-	return (start + substr_len(start));
-}
-
 size_t		substr_len(const char *start)
 {
 	char		dict[ASCCNT] = {0};
@@ -57,7 +58,6 @@ size_t		substr_len(const char *start)
 	char		found;
 	
 	end = start;
-	write(1, "substr_len()\n", 13);
 	while ((found = *end) && dict[found] == 0) {
 		dict[found]++;
 		end++;
