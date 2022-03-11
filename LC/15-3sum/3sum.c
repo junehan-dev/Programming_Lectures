@@ -6,7 +6,6 @@ const char	*str_substr_max(const char *in);
 size_t		substr_len(const char *s);
 const char	*next_substr(const char *s);
 
-#include <stdio.h>
 int	main(int argc, const char *argv[])
 {
 	const char *in;
@@ -40,7 +39,7 @@ const char *str_substr_max(const char *in)
 			long_len = cur_len;
 			longest = cur;
 		}
-		cur = next;
+		cur++;
 	}
 
 	return (longest);
