@@ -1,4 +1,4 @@
-BackJoon Algorithm Solves
+LeetCode Algorithm Solves
 =========================
 
 Index
