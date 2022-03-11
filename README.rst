@@ -9,6 +9,8 @@ Index
       - C Programming
       - Algorithm
       - Data_Structure
+   - BaekJoon_
 
 .. _HangHae: ./HH/
 .. _HackerRank: ./HR/
+.. _BakeJoon: ./BJ/
