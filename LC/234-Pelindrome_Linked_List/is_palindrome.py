@@ -28,13 +28,9 @@ def nodetolist(node):
     return (to_arr);
 
 def is_palindrome(vals):
-    r_idx = len(vals);
-    if r_idx % 2:
-        return False;
-
     l_idx = 0;
-    r_idx -= 1;
-    while l_idx < r_idx:
+    r_idx = len(vals) - 1;
+    while l_idx <= r_idx:
         if vals[l_idx] != vals[r_idx]:
             return False;
         l_idx += 1;
@@ -43,7 +39,7 @@ def is_palindrome(vals):
     return True;
 
 if __name__ == "__main__":
-    arr = [1];
+    arr = [1, 2, 1];
     node = ListNode.make_link(arr);
     a_sol = Solution();
     print(a_sol.isPalindrome(node));
