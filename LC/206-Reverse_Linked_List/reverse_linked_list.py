@@ -23,9 +23,30 @@ def link(head, tail):
     head.next = tail;
     tail.next = None;
 
+
+def iterative_reverse(head):
+    if not isinstance(head, ListNode) or head.next is None:
+        return (head);
+
+    stack = [];
+
+    while head.next:
+        stack.append(head);
+        head = head.next;
+
+    ret = head;
+    while stack:
+        tail = stack.pop()
+        head.next = tail;
+        head = tail;
+    head.next = None;
+
+    return (ret);
+
 if __name__ == "__main__":
     data = [1,2,3,4,5];
     head = ListNode.make_sequence(data);
+    print("RECURESION");
 
     a_sol = Solution();
     reversed_head = a_sol.reverseList(head);
@@ -38,15 +59,16 @@ if __name__ == "__main__":
 
     print(tail);
     assert(tail.next is None);
+    
+    print("ITERATIVES");
+    head = iterative_reverse(reversed_head);
+    
+    print(head);
+    tail = head.next;
+    while tail.next:
+        print(tail);
+        tail = tail.next
 
-""" todo
-def memoization(head):
-    stack = [];
-    stack.append(head);
-    while head.next:
-        head = head.next;
-        stack.push(head);
-    return (stack);
+    print(tail);
+    assert(tail.next is None);
 
-
-"""
