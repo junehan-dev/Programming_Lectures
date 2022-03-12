@@ -8,7 +8,9 @@ Index
    #. 561-Array_partition-i_\: `LeetCode: Array Partition-i <https://leetcode.com/problems/array-partition-i/>`_
    #. 234-Pelindrome_Linked_List_\: `LeetCode: palindrome-linked-list <https://leetcode.com/problems/palindrome-linked-list/>`_
    #. 206-Reverse_Linked_List_\: `LeetCode: Reverse-linked-list <https://leetcode.com/problems/reverse-linked-list/>`_
+   #. 328-OddEven_Linked_list_\: `LeetCode: Odd-even-linked-list <https://leetcode.com/problems/odd-even-linked-list/>`_
 
+.. _328-OddEven_Linked_list: ./328-Odd_Even_Linked_list/
 .. _3-longest_substr: ./3-longest_substr/
 .. _15-3sum: ./15-3sum/
 .. _561-Array_partition-i: ./561-Array_partition-i/
