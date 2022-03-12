@@ -3,10 +3,12 @@ from node import Node as ListNode
 
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if not isinstance(head, ListNode) or head.next == None:
+            return (head);
+
         tail = head;
         while tail.next:
             tail = tail.next
-
         assert(reverse_traverse(head, link) == head);
         return (tail)
 
