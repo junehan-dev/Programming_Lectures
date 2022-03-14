@@ -20,7 +20,7 @@ def is_paren(ch: str):
 def check_valid_2(s: str):
     MAXLEN = 10000;
     stack = [];
-    is_pushed = [False, False, False];
+    is_pushed = [0, 0, 0];
     print(s); 
     for ch in s:
         if not is_paren(ch):
@@ -28,17 +28,9 @@ def check_valid_2(s: str):
 
         if ch in "({[":
             if ch == '(':
-                if is_pushed[0] is False:
-                    is_pushed[0] = True;
-                else: 
-                    print(s);
-                    raise ValueError("( not closed");
+                is_pushed[0] += 1;
             elif ch == '[':
-                if is_pushed[1] is False:
-                    is_pushed[1] = True;
-                else: 
-                    print(s);
-                    raise ValueError("[ not closed");
+                is_pushed[1] += 1;
             else:
                 if ch == '{':
                     if is_pushed[2] is False:
@@ -50,15 +42,15 @@ def check_valid_2(s: str):
 
         else:
             if ch == ')':
-                if is_pushed[0] is True and stack[-1] == '(':
-                    is_pushed[0] = False;
+                if is_pushed[0] and stack[-1] == '(':
+                    is_pushed[0] -= 1;
                     stack.pop();
                 else: 
                     print("close with", ch, ". stack:", stack);
                     raise ValueError(")close order error");
             elif ch == ']':
-                if is_pushed[1] is True and stack[-1] == '[':
-                    is_pushed[1] = False;
+                if is_pushed[1] and stack[-1] == '[':
+                    is_pushed[1] -= 1;
                     stack.pop();
                 else: 
                     print("close with", ch, ". stack:", stack);
@@ -82,9 +74,11 @@ def check_valid_2(s: str):
 if __name__ == "__main__":
     tests = "(),()[]{},(},(){".split(',');
     a_sol = Solution();
-    results = list(map(a_sol.isValid, tests));
-    print(results, end="\n\n");
-    test = "({)}";
-    print(a_sol.isValid(test), end="\n\n");
-    test = "({})";
+    #results = list(map(a_sol.isValid, tests));
+    #print(results, end="\n\n");
+    #test = "({)}";
+    #print(a_sol.isValid(test), end="\n\n");
+    #test = "({})";
+    #print(a_sol.isValid(test));
+    test = "(([]))";
     print(a_sol.isValid(test));
