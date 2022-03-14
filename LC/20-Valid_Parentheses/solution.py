@@ -1,78 +1,51 @@
 class Solution:
-    def isValid(self, s: str) -> bool:
-        try:
-            return check_valid_2(s);
-        except ValueError as e:
-            print(e.args);
-#            raise e;
-            return False;
-        except TypeError as e:
-            print(e.args);
-#            raise e;
-            return False;
-        return True;
-    
-def is_paren(ch: str):
-    if ch in "()[]{}":
-        return True
-    raise ValueError();
+    def isValid(self, s: str):
+        return check_valid(s);
 
-def check_valid_2(s: str):
-    MAXLEN = 10000;
+def check_valid(s: str):
     stack = [];
     is_pushed = [0, 0, 0];
-    print(s); 
-    for ch in s:
-        if not is_paren(ch):
-            raise TypeError("not paren");
 
+    for ch in s:
         if ch in "({[":
             if ch == '(':
                 is_pushed[0] += 1;
             elif ch == '[':
                 is_pushed[1] += 1;
             else:
-                if ch == '{':
-                    if is_pushed[2] is False:
-                        is_pushed[2] = True;
-                else: 
-                    print(s);
-                    raise ValueError("{ not closed");
+                is_pushed[2] += 1;
+
+            if len(stack) > 10000:
+                return False;
             stack.append(ch);
 
-        else:
+        elif ch in ")]}":
             if ch == ')':
                 if is_pushed[0] and stack[-1] == '(':
                     is_pushed[0] -= 1;
                     stack.pop();
                 else: 
-                    print("close with", ch, ". stack:", stack);
-                    raise ValueError(")close order error");
+                    return False;
             elif ch == ']':
                 if is_pushed[1] and stack[-1] == '[':
                     is_pushed[1] -= 1;
                     stack.pop();
                 else: 
-                    print("close with", ch, ". stack:", stack);
-                    raise ValueError("]close order error");
+                    return False;
             else:
-                if is_pushed[2] is True and stack[-1] == '{':
-                    is_pushed[2] = False;
+                if is_pushed[2] and stack[-1] == '{':
+                    is_pushed[2] -= 1;
                     stack.pop();
                 else: 
-                    print("close with", ch, ". stack:", stack);
-                    raise ValueError("}close order error");
+                    return False;
+        else:
+            return False;
+    return (False if any(is_pushed) else True);
 
-        if len(stack) > MAXLEN:
-            return IndexError("over limit");
 
-    if any(is_pushed):
-        raise ValueError("somthing not closed");
-
-    return True;
 
 if __name__ == "__main__":
-    tests = "(),()[]{},(},(){".split(',');
+    #tests = "(),()[]{},(},(){".split(',');
     a_sol = Solution();
     #results = list(map(a_sol.isValid, tests));
     #print(results, end="\n\n");
@@ -82,3 +55,7 @@ if __name__ == "__main__":
     #print(a_sol.isValid(test));
     test = "(([]))";
     print(a_sol.isValid(test));
+
+
+
+
