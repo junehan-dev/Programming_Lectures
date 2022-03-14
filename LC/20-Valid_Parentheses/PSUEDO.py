@@ -29,4 +29,23 @@ def is_pushable(data:str):
         else:
             RET FALSE
     retrun TRUE
-                    
+
+def checkorder(flags, key):
+    data = "([)]";
+    flags = [];
+
+    PUSH '(';
+    [
+        [(, 1],
+    ];
+    PUSH '['
+    [
+        [(, 1],
+        [[, 1],
+    ];
+    PUSH ')'
+    [
+        [(, 1],
+        [[, 1],
+        [), ], ## CHECK LAST BEFORE CLOSE!
+    ];
