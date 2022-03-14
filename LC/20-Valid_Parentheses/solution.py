@@ -1,6 +1,5 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        MAX_LEN = 10000;
         try:
             return check_valid(s);
         except ValueError as e:
@@ -19,8 +18,10 @@ def is_paren(ch: str):
     raise ValueError();
 
 def check_valid(s: str):
+    MAXLEN = 10000;
     stack = [];
     is_pushed = [False, False, False];
+    
     for ch in s:
         if not is_paren(ch):
             raise TypeError("not paren");
@@ -65,6 +66,8 @@ def check_valid(s: str):
                     print(s);
                     raise ValueError("{ not opened");
         stack.append(ch);
+        if len(stack) > MAXLEN:
+            return IndexError("over limit");
 
     if any(is_pushed):
         raise ValueError("somthing not closed");
