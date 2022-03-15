@@ -6,11 +6,21 @@ class MyCircularQueue:
         self._rear = 0;
 
     def enQueue(self, value: int) -> bool:
-        """
         if self.isFull():
             return False;
-        """
-        pass
+
+        r_idx = self._rear;
+        f_idx = self._front;
+        if (f_idx < r_idx):
+            expects = r_idx + 1;
+            queue_to = 0 if (expects == capacity) else expects;
+            self._rear = queue_to;
+            self.rear_obj = v;
+            return (True);
+        else:
+            self._rear += 1;
+            self._rear_obj = v;
+            return (True);
 
     def deQueue(self) -> bool:
         """
@@ -20,16 +30,22 @@ class MyCircularQueue:
 
     def isFull(self) -> bool:
         """IF REAR NEXT IS FRONT? -> THEN FULL.
-        f = self.Front();
-        r = self.Rear();
-
-        if (f < r):
-            return True if (r-1 == f) else False;
-        if (f > r):
-            return True if (f-1 == r) else False;
-        return False;
         """
-        pass
+        if self.isEmpty():
+            return False;
+
+        r_idx = self._rear;
+        f_idx = self._front;
+        if (f_idx < r_idx):
+            expects = r_idx + 1;
+            queue_to = 0 if (expects == capacity) else expects;
+            if queue_to == f_idx:
+                return (True)
+        else:
+            if (self._rear + 1 == self._front):
+                return (True);
+
+        return (False);
 
 # PASS
     def isEmpty(self) -> bool:
