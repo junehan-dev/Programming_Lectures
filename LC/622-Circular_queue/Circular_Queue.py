@@ -23,6 +23,8 @@ class MyCircularQueue_2:
             return False;
         self.front_obj.pop();
         self._front = self.get_next_f_idx();
+        if self.size == 1:
+            self._rear = self.get_next_r_idx();
         self.size -=1;
         print(self._series, self.size, "head:", self._front, "rear", self._rear);
         return True;
