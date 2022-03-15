@@ -94,8 +94,18 @@ def test():
     assert(myCircularQueue.deQueue() == True)  #  True
     assert(myCircularQueue.Rear() == 4)        #  4
 
+def test_2():
+    myCircularQueue = MyCircularQueue_2(6);
+    assert(myCircularQueue.enQueue(6) == True)
+    assert(myCircularQueue.Rear() == 6)        #  3
+    assert(myCircularQueue.Rear() == 6)        #  3
+    assert(myCircularQueue.deQueue() == True)  #  True
+    assert(myCircularQueue.enQueue(5) == True) #  True
+    assert(myCircularQueue.Rear() == 5)        #  4
+
+
 if __name__ == "__main__":
-    test();
+    test_2();
         
 """
 Explanation
