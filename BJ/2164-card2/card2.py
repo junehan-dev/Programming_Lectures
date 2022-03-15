@@ -2,16 +2,25 @@ def get_input():
     return (int(input()));
 
 def card2(n):
-    queue = [_ for _ in n];
-    
+    queue = [_ for _ in range(1, n + 1)];
 
-def enque(queue, data):
+    if not queue:
+        return None;
+
+    while (queue):
+        ret, queue = dequeue(queue);
+        if not (queue):
+            return ret;
+
+        deq_data, queue = dequeue(queue);
+        queue = enqueue(queue, deq_data);
+
+def enqueue(queue, data):
     return (queue + [data]);
     
-def deque(queue):
-    _, *queue = queue;
-    return (queue);
+def dequeue(queue):
+    data, *queue = queue;
+    return (data, queue);
 
 if __name__ == "__main__":
-    for i in range(10);
-        print(i, ": ", card2(i));
+    print(card2(get_input()));
