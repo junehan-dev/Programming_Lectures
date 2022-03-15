@@ -1,27 +1,38 @@
 class MyCircularQueue:
 
     def __init__(self, k: int):
-        
+        self.series = Tuple([[] for _ in range(k)]);
+        self.capacity = k;
+        self._front = 0;
+        self._rear = 0;
 
     def enQueue(self, value: int) -> bool:
-        
+        pass
 
     def deQueue(self) -> bool:
-        
+        pass
 
     def Front(self) -> int:
-        
+        """Front : position of object inserted latest
+        Depends to the property _front
+        """
+        pass
 
     def Rear(self) -> int:
-        
+        """Depends to the Property _rear
+        """
+        pass
 
     def isEmpty(self) -> bool:
-        
+        """IF FRONT EQUAL REAR -> THEN EMPTY.
+        """
+        pass
 
     def isFull(self) -> bool:
+        """IF REAR + 1 IS FRONT? -> THEN FULL.
+        """
+        pass
         
-
-
 # Your MyCircularQueue object will be instantiated and called as such:
 # obj = MyCircularQueue(k)
 # param_1 = obj.enQueue(value)
@@ -30,7 +41,6 @@ class MyCircularQueue:
 # param_4 = obj.Rear()
 # param_5 = obj.isEmpty()
 # param_6 = obj.isFull()
-
 
 def test()
     MyCircularQueue myCircularQueue = MyCircularQueue(size);
