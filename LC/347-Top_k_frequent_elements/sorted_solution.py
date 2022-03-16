@@ -3,6 +3,12 @@ from typing import List
 
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        mosts = Counter(nums).most_common(k);
+        return [key for key, _ in mosts]
+
+# if no good builtins..
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         freq_map = [];
         counter = 0;
         base = nums[0];
