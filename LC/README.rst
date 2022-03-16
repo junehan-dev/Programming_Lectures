@@ -11,6 +11,7 @@ Index
    #. 206-Reverse_Linked_List_\: `LeetCode: Reverse-linked-list <https://leetcode.com/problems/reverse-linked-list/>`_
    #. 328-OddEven_Linked_list_\: `LeetCode: Odd-even-linked-list <https://leetcode.com/problems/odd-even-linked-list/>`_
    #. 622-Circular_queue_\: `LeetCode: Odd-even-linked-list <https://leetcode.com/problems/design-circular-queue/>`_
+   #. 347-Top_k_frequent_elements_: `LeetCode: top-k-freqent-elements<https://leetcode.com/problems/top-k-frequent-elements/>`_
 
 .. _328-OddEven_Linked_list: ./328-Odd_Even_Linked_list/
 .. _3-longest_substr: ./3-longest_substr/
@@ -20,4 +21,4 @@ Index
 .. _234-Pelindrome_Linked: ./234-Pelindrome_Linked_List/
 .. _206-Reverse_Linked_List: ./206-Reverse_Linked_List/
 .. _622-Circular_queue: ./622-Circular_queue/
-
+.. _347-Top_k_frequent_elements: ./347-Top_k_frequent_elements/
