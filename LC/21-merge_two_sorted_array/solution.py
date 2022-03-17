@@ -20,7 +20,7 @@ def merge_link(h1, h2):
         else:
             stack.append(h2);
             h2 = h2.next;
-#    [print(node.val) for node in stack];
+    [print(node.val) for node in stack];
     h = h1 if h1 else h2
     assert(h.val)
     while h:
@@ -30,7 +30,7 @@ def merge_link(h1, h2):
     #FIN PUSH
     #STACK pop link
     head = stack.pop();
-    if len(stack) > 1:
+    if len(stack):
         poped = stack.pop();
         while stack:
             poped.next = head;
@@ -48,8 +48,8 @@ def debug_node(head):
 if __name__ == "__main__":
     a_sol = Solution();
 
-    arr1 = [1,2,3]
-    arr2 = [3,4,5]
+    arr1 = [1,4,5,6,7]
+    arr2 = [4,5,6,8,10]
 
     s1 = ListNode.make_sequence(arr1);
     s2 = ListNode.make_sequence(arr2);
