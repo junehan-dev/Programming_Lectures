@@ -8,9 +8,6 @@ class Solution:
 
 def start():
     s1 = ListNode.make_sequence([1,2,3]);
-    while(s1):
-        print(s1.val);
-        s1 = s1.next;
     s2 = ListNode.make_sequence([1,3,4]);
     return merge_link(s1, s2);
 
@@ -27,18 +24,16 @@ def merge_link(h1, h2):
         else:
             stack.append(h2);
             h2 = h2.next;
-    while (h1 or h2):
-        if h1 is None:
-            while h2:
-                stack.append(h2);
-                h2 = h2.next;
-        else:
-            while h1:
-                stack.append(h2);
-                h2 = h2.next;
+
+    h = h1 if h1 else h2
+    while h:
+        stack.append(h);
+        h = h.next;
     assert(not all([h1, h2]));
     #FIN PUSH
     
+    for node in stack:
+        print(node.val);
     #STACK pop link
     head = stack.pop();
     if len(stack) > 1:
@@ -51,7 +46,7 @@ def merge_link(h1, h2):
 
 if __name__ == "__main__":
     head = start();
-    print("FIN");
-    while(head):
-        print(head.val);
-        head = head.next
+    #print("FIN");
+    #while(head):
+        #print(head.val);
+        #head = head.next
