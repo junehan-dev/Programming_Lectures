@@ -5,8 +5,6 @@ from s_linked_list_node import Node as ListNode
 class Solution:
     def mergeTwoLists(self, s1: Optional[ListNode], s2: Optional[ListNode]) -> Optional[ListNode]:
         ret: Optional[ListNode];
-        print(s1.val);
-        print(s2.val);
         if all([s1, s2]):
             ret = merge_link(s1, s2);
         else:
@@ -22,14 +20,13 @@ def merge_link(h1, h2):
         else:
             stack.append(h2);
             h2 = h2.next;
-    [print(node.val) for node in stack];
-    assert((h1 and h2) == False);
+#    [print(node.val) for node in stack];
     h = h1 if h1 else h2
+    assert(h.val)
     while h:
         stack.append(h);
         h = h.next;
-
-    assert((h1 and h2) == False);
+    assert(not h);
     #FIN PUSH
     #STACK pop link
     head = stack.pop();
@@ -45,7 +42,7 @@ def merge_link(h1, h2):
 
 def debug_node(head):
     while head:
-        print(head.val);
+        print("head: ",head.val);
         head = head.next;
 
 if __name__ == "__main__":
