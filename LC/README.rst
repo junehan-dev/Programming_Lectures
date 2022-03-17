@@ -4,6 +4,7 @@ LeetCode Algorithm Solves
 Index
 -----
    1. 3-longest_substr_\: `LeetCode: Longest substring <https://leetcode.com/problems/longest-substring-without-repeating-characters/>`_
+   #. 21-merge_two_sorted_array_\: `LeetCode: merge two sorted list <https://leetcode.com/problems/merge-two-sorted-lists/>`_
    #. 15-3sum_\: `LeetCode: 3Sum <https://leetcode.com/problems/3sum/>`_
    #. 20-Valid_Parentheses_\: `LeetCode: Valid Parentheses <https://leetcode.com/problems/valid-parentheses/>`
    #. 561-Array_partition-i_\: `LeetCode: Array Partition-i <https://leetcode.com/problems/array-partition-i/>`_
@@ -22,3 +23,4 @@ Index
 .. _206-Reverse_Linked_List: ./206-Reverse_Linked_List/
 .. _622-Circular_queue: ./622-Circular_queue/
 .. _347-Top_k_frequent_elements: ./347-Top_k_frequent_elements/
+.. _21-merge_two_sorted_array: ./21-merge_two_sorted_array/
