@@ -1,6 +1,6 @@
 #include <assert.h>
 #include <unistd.h>
-#define ASCCNT 128
+#define ASCII_MAX 128
 
 const char	*str_substr_max(const char *in);
 size_t		substr_len(const char *s);
@@ -10,17 +10,17 @@ int	main(int argc, const char *argv[])
 {
 	const char *in;
 	const char *out;
-	int			ret;
+	int			out_len;
 
 	assert(argc == 2);
 	in = argv[1];
 	out = str_substr_max(in);
-	ret = substr_len(out);
+	out_len = substr_len(out);
 //
 	write(1, "MAX:", 4);
-	write(1, out, substr_len(out));
+	write(1, out, out_len);
 //
-	return (ret);
+	return (out_len);
 }
 
 const char *str_substr_max(const char *in)
@@ -51,17 +51,17 @@ const char *str_substr_max(const char *in)
 	return (longest);
 }
 
-size_t		substr_len(const char *start)
+size_t		substr_len(const char *s)
 {
-	char		dict[ASCCNT] = {0};
-	const char	*end;
-	char		found;
+	char		dict[ASCII_MAX] = {0};
+	const char	*s_end;
+	char		ch;
 	
-	end = start;
-	while ((found = *end) && dict[found] == 0) {
-		dict[found]++;
-		end++;
+	s_end = s;
+	while ((ch = *s_end) && dict[ch] == 0) {
+		dict[ch]++;
+		s_end++;
 	}
 
-	return (end - start);
+	return (s_end - s);
 }
