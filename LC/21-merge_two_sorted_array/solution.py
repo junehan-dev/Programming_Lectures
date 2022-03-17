@@ -36,9 +36,9 @@ def merge_link(h1, h2):
             poped.next = head;
             head = poped;
             poped = stack.pop();
+        poped.next = head;
+        head = poped;
     return (head);
-
-
 
 def debug_node(head):
     while head:
