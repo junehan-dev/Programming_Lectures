@@ -13,8 +13,9 @@ Index
    #. 328-OddEven_Linked_list_\: `LeetCode: Odd-even-linked-list <https://leetcode.com/problems/odd-even-linked-list/>`_
    #. 622-Circular_queue_\: `LeetCode: Odd-even-linked-list <https://leetcode.com/problems/design-circular-queue/>`_
    #. 347-Top_k_frequent_elements_: `LeetCode: top-k-freqent-elements<https://leetcode.com/problems/top-k-frequent-elements/>`_
-   #. 200-Number_of_islands_: `LeetCode: Number_of_islands<https://leetcode.com/problems/top-k-frequent-elements://leetcode.com/problems/number-of-islands/>`_
-   #. 46-Permutations_: `LeetCode: Number_of_islands<https://leetcode.com/problems/permutations/>`_
+   #. 200-Number_of_islands_: `LeetCode: Number_of_islands<https://://leetcode.com/problems/number-of-islands/>`_
+   #. 46-Permutations_: `LeetCode: Permutations<https://leetcode.com/problems/permutations/>`_
+   #. 77-Combinations_: `LeetCode: Combinations<https://leetcode.com/problems/combinations/>`_
 
 .. _328-OddEven_Linked_list: ./328-Odd_Even_Linked_list/
 .. _3-longest_substr: ./3-longest_substr/
@@ -28,3 +29,4 @@ Index
 .. _21-merge_two_sorted_array: ./21-merge_two_sorted_array/
 .. _200-Number_of_islands: ./200-Number_of_islands/
 .. _46-Permutations: ./46-permutations/
+.. _77-Combinations: ./77-combinations/
