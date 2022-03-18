@@ -1,9 +1,7 @@
-from collections import Counter
 def combination(n, k):
     ret = []
     src = list(range(1, n+1));
     sets = permutation_2([], src, k);
-    #iters = [ret.append c for c in iter(map(Counter, sets)) if c not in ret)]
     return (sets);
 
 def permutation_2(dest, src, k):
@@ -18,7 +16,6 @@ def permutation_2(dest, src, k):
         ret += (permutations);
     return (ret)
         
-
 def permutation(dest, src, k):
     if not k:
         return ([dest]);
