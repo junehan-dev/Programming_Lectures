@@ -13,6 +13,8 @@ Index
    #. 328-OddEven_Linked_list_\: `LeetCode: Odd-even-linked-list <https://leetcode.com/problems/odd-even-linked-list/>`_
    #. 622-Circular_queue_\: `LeetCode: Odd-even-linked-list <https://leetcode.com/problems/design-circular-queue/>`_
    #. 347-Top_k_frequent_elements_: `LeetCode: top-k-freqent-elements<https://leetcode.com/problems/top-k-frequent-elements/>`_
+   #. 200-Number_of_islands_: `LeetCode: Number_of_islands<https://leetcode.com/problems/top-k-frequent-elements://leetcode.com/problems/number-of-islands/>`_
+
 
 .. _328-OddEven_Linked_list: ./328-Odd_Even_Linked_list/
 .. _3-longest_substr: ./3-longest_substr/
@@ -24,3 +26,4 @@ Index
 .. _622-Circular_queue: ./622-Circular_queue/
 .. _347-Top_k_frequent_elements: ./347-Top_k_frequent_elements/
 .. _21-merge_two_sorted_array: ./21-merge_two_sorted_array/
+.. _200-Number_of_islands: ./200-Number_of_islands/
