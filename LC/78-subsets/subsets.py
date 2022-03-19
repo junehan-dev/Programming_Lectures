@@ -16,5 +16,5 @@ def subsets_dfs(dest, src, k):
     return (ret);
 
 if __name__ == "__main__":
-    ret =  subsets_dfs([], [1,2,3], 0);
+    ret =  subsets_dfs([], [0], 1);
     print(ret);
