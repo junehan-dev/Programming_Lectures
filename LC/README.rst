@@ -14,6 +14,9 @@ Index
    #. 622-Circular_queue_\: `LeetCode: Odd-even-linked-list <https://leetcode.com/problems/design-circular-queue/>`_
    #. 347-Top_k_frequent_elements_: `LeetCode: top-k-freqent-elements<https://leetcode.com/problems/top-k-frequent-elements/>`_
    #. 200-Number_of_islands_: `LeetCode: Number_of_islands<https://://leetcode.com/problems/number-of-islands/>`_
+
+      - 2 type of solution included, DFS using stack, BFS using Queue
+
    #. 46-Permutations_: `LeetCode: Permutations<https://leetcode.com/problems/permutations/>`_
    #. 77-Combinations_: `LeetCode: Combinations<https://leetcode.com/problems/combinations/>`_
 
