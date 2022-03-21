@@ -1,34 +1,29 @@
-from collections import deque
-
-def main():
-    n = 4;
-    log = [-1] * n;
-    result = []
-            result.append(ret);
-
-def dfs(log, row, n):
-    if (row == n):
-        return (log);
+def dfs(n, row = 0, log=[]):
+    if not log:
+        log = [-1] * n;
     ret = [];
-    col = 0;
-    while (col < n):
-        print(row);
-        log[row] = col;
-        if check_log(log, row):
-            ret += dfs(log, row + 1, n)
-        col += 1;
-    return (ret);
+    if row == n:
+        return [[_ for _ in log]];
+    for col in range(n):
+        if is_valid(log, row, col):
+            log[row] = col;
+            ret += (dfs(n, row+1, log));
+        else:
+            continue;
+    return ret;
 
-def check_log(log, row):
-    cmp_row = 0;
-    while (cmp_row < row):
-        if log[cmp_row] == log[row]:
-            return (0);
-        if row - cmp_row == abs(log[row] - log[cmp_row]):
-            return (0);
-        cmp_row += 1;
-    return (1);
+def is_valid(log, row, col):
+    p_row = 0;
+    for old_row in range(row):
+        old_col = log[old_row];
+        if old_col == col:
+            return False;
+        diff = (col - old_col); 
+        diff = ~diff + 1 if diff < 0 else diff;
+        if diff == row - old_row:
+            return False;
+    return True;
 
+ret = dfs(11);
 
-
-main();
+print(f"max : {len(ret)}", ret);
