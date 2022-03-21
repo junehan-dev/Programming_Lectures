@@ -20,6 +20,7 @@ Index
    #. 46-Permutations_: `LeetCode: Permutations<https://leetcode.com/problems/permutations/>`_
    #. 77-Combinations_: `LeetCode: Combinations<https://leetcode.com/problems/combinations/>`_
    #. 78-Subsets_: `LeetCode: Subsets<https://://leetcode.com/problems/subsets/>`_
+   #. 51-N_Queens_: `LeetCode: Subsets<https://://leetcode.com/problems/n-queens/>`_
 
 .. _328-OddEven_Linked_list: ./328-Odd_Even_Linked_list/
 .. _3-longest_substr: ./3-longest_substr/
@@ -35,3 +36,4 @@ Index
 .. _46-Permutations: ./46-permutations/
 .. _77-Combinations: ./77-combinations/
 .. _78-Subsets: ./78-subsets/
+.. _51-N_Queens: ./51-N_queens/
