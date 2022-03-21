@@ -1,21 +1,41 @@
 class TreeNode(object):
     def __init__(self, v):
         self._v = v
-        self._left = None
-        self._right = None
+        self.left = None
+        self.right = None
 
     @property
-    def left(self):
-        return self._left;
-
-    @left.setter
-    def left(self, v):
-        self._left = TreeNode(v);
-
+    def value(self):
+        return self._v;
+        
+    @value.setter
+    def value(self, v):
+        self._v = v;
+    #For graphic
     @property
-    def right(self):
-        return self._right;
+    def val(self):
+        return self._v;
+ 
 
-    @right.setter
-    def right(self, v):
-        self._right = TreeNode(v);
+    @staticmethod
+    def dfs_traverse(root, i,cb = print):
+        if root.left:
+            TreeNode.dfs_traverse(root.left, i*2 + 1);
+        if root.right:
+            TreeNode.dfs_traverse(root.right, i*2 + 2);
+        cb(f"{i}:   value:{root}" );
+        return self;
+
+    @staticmethod
+    def bfs_traverse(root):
+        if root.left:
+            TreeNode.dfs_traverse(root.left);
+        if root.right:
+            TreeNode.dfs_traverse(root.right);
+        print(root._v);
+        return None;
+
+
+    def __str__(self):
+        return f"{self._v}";
+        

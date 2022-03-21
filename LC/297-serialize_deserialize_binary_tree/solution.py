@@ -4,22 +4,28 @@ from collections import deque
 class Codec:
     def serialize(self, root):
         py_list_data    = resolve_tree(root);
-        to_str          = list(map(lambda el: f"{el}" if el is not None else "null", py_list_data));
+        to_str          = list(map(
+            lambda data: f"{data}" if data is not None else "null",
+            py_list_data
+            )
+        );
         ret             = ",".join(to_str)
         return (ret);
         
     def deserialize(self, data):
-        py_list_data    = list(map(lambda el: None if el == "null" else int(el), data.split(',')));
+        py_list_data    = list(map(
+            lambda el: None if el == "null" else int(el),
+            data.split(',')
+            )
+        );
         ret             = create_tree(py_list_data);
         return (ret);
 
-
-
-def create_tree(data_arr):
-    if not data_arr:
+def create_tree(py_list_data):
+    if not py_list_data:
         return [];
     work_q          = deque();
-    serial_queue    = deque(data_arr);
+    serial_queue    = deque(py_list_data);
     root            = TreeNode(serial_queue.popleft());
 
     work_q.append(root);
@@ -44,42 +50,45 @@ def create_tree(data_arr):
 def resolve_tree(node: TreeNode) -> list:
     if not node:
         return [];
-    data        = [];
+
+    serial_data = [];
     work_q      = deque();
     root        = node;
 
     work_q.append(root);
-    data.append(node.val);
+    serial_data.append(node.val);
 
     while work_q:
         node = work_q.popleft();
 
         if node.left and node.right:
-            data.append(node.left.val);
-            work_q.append(node.left);
-        elif node.left:
-            data.append(node.left.val);
-            work_q.append(node.left);
-            if work_q:
-                temp_q = list(work_q);
-                if is_left(temp_q):
-                    data.append(None);
-        elif node.right:
-            data.append(None);
+            register_node(serial_data, work_q, node.left);
+            register_node(serial_data, work_q, node.right);
+        elif node.left and not node.right:
+            register_node(serial_data, work_q, node.left);
+            if is_lower_level(work_q):
+                serial_data.append(None);
+        elif node.right and not node.left:
+            serial_data.append(None);
             if node.right:
-                data.append(node.right.val);
+                serial_data.append(node.right.val);
                 work_q.append(node.right);
         else:
             temp_q = list(work_q);
-            if is_left(temp_q):
-                data.append(None);
-                data.append(None);
-    return (data);
+            if is_lower_level(temp_q):
+                serial_data.append(None);
+                serial_data.append(None);
+    return (serial_data);
 
 
-def is_left(nodes):
+def register_node(serial_data, work_q, node):
+    serial_data.append(node.val);
+    work_q.append(node);
+
+def is_lower_level(nodes):
     for n in nodes:
         if n.left or n.right:
             return True;
     return False;
+
 
