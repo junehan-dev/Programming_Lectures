@@ -11,11 +11,11 @@ class TreeNode(object):
     @value.setter
     def value(self, v):
         self._v = v;
+
     #For graphic
     @property
     def val(self):
         return self._v;
- 
 
     @staticmethod
     def dfs_traverse(root, i,cb = print):
@@ -26,16 +26,6 @@ class TreeNode(object):
         cb(f"{i}:   value:{root}" );
         return self;
 
-    @staticmethod
-    def bfs_traverse(root):
-        if root.left:
-            TreeNode.dfs_traverse(root.left);
-        if root.right:
-            TreeNode.dfs_traverse(root.right);
-        print(root._v);
-        return None;
-
-
     def __str__(self):
         return f"{self._v}";
-        
+
