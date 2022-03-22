@@ -1,4 +1,3 @@
-from tree_node import TreeNode
 def create_tree(py_list_data):
     if not py_list_data:
         return [];
@@ -22,4 +21,5 @@ def create_tree(py_list_data):
             work_q.append(node.right);
 
     return (root); 
+
 
