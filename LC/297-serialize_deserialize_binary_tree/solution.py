@@ -46,7 +46,6 @@ def create_tree(py_list_data):
     return (root); 
 
 
-
 def resolve_tree(node: TreeNode) -> list:
     if not node:
         return [];
@@ -56,39 +55,13 @@ def resolve_tree(node: TreeNode) -> list:
     root        = node;
 
     work_q.append(root);
-    serial_data.append(node.val);
-
-    while work_q:
+    while any(work_q):
         node = work_q.popleft();
-
-        if node.left and node.right:
-            register_node(serial_data, work_q, node.left);
-            register_node(serial_data, work_q, node.right);
-        elif node.left and not node.right:
-            register_node(serial_data, work_q, node.left);
-            if is_lower_level(work_q):
-                serial_data.append(None);
-        elif node.right and not node.left:
+        if node is None:
             serial_data.append(None);
-            if node.right:
-                serial_data.append(node.right.val);
-                work_q.append(node.right);
         else:
-            temp_q = list(work_q);
-            if is_lower_level(temp_q):
-                serial_data.append(None);
-                serial_data.append(None);
+            serial_data.append(node.val)
+            work_q.append(node.left);
+            work_q.append(node.right);
     return (serial_data);
-
-
-def register_node(serial_data, work_q, node):
-    serial_data.append(node.val);
-    work_q.append(node);
-
-def is_lower_level(nodes):
-    for n in nodes:
-        if n.left or n.right:
-            return True;
-    return False;
-
 
