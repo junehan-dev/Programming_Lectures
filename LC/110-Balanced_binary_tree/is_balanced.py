@@ -1,10 +1,8 @@
-from tree_node import TreeNode
-
-def is_balanced(t):
-    if t is None:
+def is_balanced(root):
+    if root is None:
         return True;
     log = [0];
-    dfs_height(t, log);
+    dfs_height(root, log);
     return False if log[0] True else False;
 
 def dfs_height(root: TreeNode, log) -> bool:
