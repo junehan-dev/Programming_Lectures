@@ -21,6 +21,8 @@ Index
    #. 77-Combinations_: `LeetCode: Combinations<https://leetcode.com/problems/combinations/>`_
    #. 78-Subsets_: `LeetCode: Subsets<https://://leetcode.com/problems/subsets/>`_
    #. 51-N_Queens_: `LeetCode: Subsets<https://://leetcode.com/problems/n-queens/>`_
+   #. 297-serialize_deserialize_binary_tree_: `LeetCode: serialize_deserialize_binary_tree<https://://leetcode.com/problems/serialize-and-deserialize-binary-tree>`_
+   #. 226-invert_binary_tree_: `LeetCode: invert_binary_tree<https://://leetcode.com/problems/invert-binary-tree>`_
 
 .. _328-OddEven_Linked_list: ./328-Odd_Even_Linked_list/
 .. _3-longest_substr: ./3-longest_substr/
@@ -37,3 +39,5 @@ Index
 .. _77-Combinations: ./77-combinations/
 .. _78-Subsets: ./78-subsets/
 .. _51-N_Queens: ./51-N_queens/
+.. _297-serialize_deserialize_binary_tree: ./297-serialize_deserialize_binary_tree/
+.. _226-invert_binary_tree: ./226-invert_binary_tree/
