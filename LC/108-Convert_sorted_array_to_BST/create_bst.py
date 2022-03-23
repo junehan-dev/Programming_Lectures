@@ -19,6 +19,12 @@ def dfs_recursion(parent, sorted_arr):
         parent.right = TreeNode(r_arr[len(r_arr) // 2]);
         dfs_recursion(parent.right, r_arr);
 
+def dfs_recursion2(arr):
+    mid = len(arr) // 2;
+    parent = TreeNode(arr[mid]);
+    parent.left = dfs_recursion(arr[:mid]) if mid else None;
+    parent.right = dfs_recursion(arr[mid + 1:]) if len(arr) > 2 else None;
+    return parent;
 
 from collections import deque
 def create_bst_bfs(sorted_arr):
