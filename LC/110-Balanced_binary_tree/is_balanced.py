@@ -14,16 +14,16 @@ def is_balanced(t):
     return True;
 
 def dfs_height(root: TreeNode) -> bool:
-    l_h = (1 + is_balanced(root.left)) if root.left else None;
-    r_h = (1 + is_balanced(root.right)) if root.right else None;
+    l_h = (1 + dfs_height(root.left)) if root.left else 0;
+    r_h = (1 + dfs_height(root.right)) if root.right else 0;
 
-    if not any((l_h, r_h)):
-        return (0);
+    if (l_h + r_h):
+        l_h = l_h if l_h else r_h;
+        r_h = r_h if r_h else l_h;
 
-    l_h = l_h if l_h is not None else r_h;
-    r_h = r_h if r_h is not None else l_h;
+        if abs(l_h - r_h) > 1:
+            raise HeightBalanceError(f"{root}.left: {l_h}, right: {r_h}. non matched height found.");
+        return max((l_h, r_h));
 
-    if abs(l_h - r_h) > 1:
-        raise HeightBalanceError(f"{root}.left: {l_h}, right: {r_h}. non matched height found.");
-    return max((l_h, r_h));
+    return (0);
  
