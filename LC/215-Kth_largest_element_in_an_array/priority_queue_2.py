@@ -25,8 +25,9 @@ class PriorityQueue:
         r = parent * 2 + 1 if len(self._datas) - 1 >= parent * 2 + 1 else None;
         if any([l, r]):
             child = r if r is not None and self._datas[r] >= self._datas[l] else l;
-            self._swap(parent, child);
-            self._sink(child); 
+            if self._datas[child] > self._datas[parent]:
+                self._swap(parent, child);
+                self._sink(child);
 
     def find_max(self):
         return self._datas[1] if len(self._datas) > 1 else None;
