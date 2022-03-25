@@ -27,6 +27,7 @@ def dfs_recursion2(arr):
     return parent;
 
 from collections import deque
+
 def create_bst_bfs(sorted_arr):
     assert(sorted_arr);
     root = TreeNode(sorted_arr[len(sorted_arr) // 2]);

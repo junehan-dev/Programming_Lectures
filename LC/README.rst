@@ -25,6 +25,7 @@ Index
    #. 226-invert_binary_tree_: `LeetCode: invert_binary_tree<https://leetcode.com/problems/invert-binary-tree>`_
    # 108-Convert_sorted_array_to_BST_: `LeetCode: Convert_sorted_array_to_BST<https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/>`_
    # 110-Balanced_binary_tree_: `LeetCode: Balanced_binary_tree<https://leetcode.com/problems/balanced-binary-tree/>`_
+   # 215-Kth_largest_element_in_an_array_: `LeetCode: Kth_largest_element_in_an_array<https://leetcode.com/problems/kth-largest-element-in-an-array/submissions/>`_
 
 .. _328-OddEven_Linked_list: ./328-Odd_Even_Linked_list/
 .. _3-longest_substr: ./3-longest_substr/
@@ -45,3 +46,4 @@ Index
 .. _226-invert_binary_tree: ./226-invert_binary_tree/
 .. _108-Convert_sorted_array_to_BST: ./108-Convert_sorted_array_to_BST/
 .. _110-Balanced_binary_tree: ./110-Balanced_binary_tree/
+.. _215-Kth_largest_element_in_an_array: ./215-Kth_largest_element_in_an_array/
