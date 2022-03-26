@@ -10,7 +10,7 @@ def insertion_sort(head):
     while (cur.next is not None):
         if (cur.val <= cur.next.val):
             cur = cur.next;
-        else: # cur.val > target.val
+        else: # cur.val > cur.next.val
             target = cur.next;
             cur.next = target.next;
             prev_node = base_node;
@@ -18,6 +18,7 @@ def insertion_sort(head):
             while (cmp_node.val < target.val):
                 prev_node = cmp_node;
                 cmp_node = cmp_node.next;
+            # prev_node.val < target.val < cmp_node.val
             prev_node.next = target;
             target.next = cmp_node;
     
