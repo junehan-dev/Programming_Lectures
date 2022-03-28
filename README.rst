@@ -3,14 +3,14 @@ Online Programming Lectures
 
 Index
 -----
-   - HangHae_
-   - HackerRank_
-      - Problem Solving
-      - C Programming
-      - Algorithm
-      - Data_Structure
    - BaekJoon_
+   - HackerRank_
+   - Programmers_
+   - LeetCode_
+   - HangHae_
 
 .. _HangHae: ./HH/
 .. _HackerRank: ./HR/
+.. _Programmers: ./PG/
 .. _BaekJoon: ./BJ/
+.. _LeetCode: ./LC/
