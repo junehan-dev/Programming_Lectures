@@ -1,18 +1,25 @@
-from collections import deque;
-
 def placement(cnt, houses):
-    h_map = set(houses);
-    mid = sum(houses) // cnt;
-    q = deque([[mid]]);
-    ret = [];
-    while not ret:
-        ts = q.popleft();
-        ret = [t for t in ts if t in h_map];
-        if not ret:
-            lev = [];
-            if mid - 1:
-                lev.append(mid - 1);
-            if mid + 1 < cnt:
-                lev.append(mid + 1);
-            ret.append(lev);
-    return min(ret);
+    qsort(houses, 0, cnt);
+    return houses[(cnt - 1) // 2];
+
+def qsort(arr, low, high):
+    if len(arr[low:high]) > 1:
+        return None;
+    mid = ((low + high) // 2)
+    pivot = arr[mid];
+    start = low + 1;
+    end = high - 1;
+
+    arr[low], arr[mid] = arr[mid], arr[low];
+    while (start < end):
+        if start < end and arr[start] <= pivot:
+            start += 1;
+        if end > start and arr[end] > pivot:
+            end -= 1;
+        if arr[start] > pivot and arr[end] <= pivot:
+            arr[start], arr[end] = arr[end], arr[start];
+
+    start -= 1;
+    arr[low], arr[start] = arr[start], arr[low];
+    qsort(arr, low, start - 1);
+    qsort(arr, start + 1, high);

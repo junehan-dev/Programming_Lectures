@@ -1,9 +1,10 @@
 from antenna import placement
+from sys import stdin
 
-houses = [1,1,1,1,2];
-count = 5;
-expect = 1;
-ret = placement(count, houses);
-
-assert(ret == expect);
+cnt = int(input());
+houses = [_ for _ in map(int, stdin.readline().split(' '))];
+print("cnt", cnt);
+print("houses",houses);
+ret = placement(cnt, houses);
+print(ret);
 
