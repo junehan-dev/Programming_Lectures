@@ -1,4 +1,4 @@
-3_qsort(arr, start, end):
+def three_p_qsort(arr, start, end):
     if start >= end:
         return ;
 
@@ -18,8 +18,9 @@
         else:
             cur_i += 1;
     if lt_i != start:
-        3_qsort(arr, start, lt_i - 1);
+        three_p_qsort(arr, start, lt_i - 1);
     if gt_i != end:
-        3_qsort(arr, gt_i + 1, end);
+        three_p_qsort(arr, gt_i + 1, end);
 
-
+def swap(arr,s1, s2):
+    arr[s1], arr[s2] = arr[s2], arr[s1];
