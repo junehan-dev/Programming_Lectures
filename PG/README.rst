@@ -7,8 +7,10 @@ Index
    - 42583_: Stack_Queue/Trucks_acrossing_the_Bridge (ONGOING)
    - 43165_: Tree/Leaf Target number: https://programmers.co.kr/learn/courses/30/lessons/43165
    - 49994_: Graph/unique walk path: https://programmers.co.kr/learn/courses/30/lessons/49994
+   - 42889_: Search
 
 .. _42586: ./42586/
 .. _42583: ./42583/
 .. _43165: ./43165/
 .. _49994: ./49994/
+.. _42889: ./42889/
