@@ -11,10 +11,17 @@ def calc_ratio(stages, n):
         while entered + cur < len(stages) and stages[entered+cur] == n:
             cur += 1;
         entered += cur;
-        if f"{cur/entered}" in ret:
-            ret[f"{cur/entered}"].append(n);
+        if cur:
+            if f"{cur/entered}" in ret:
+                ret[f"{cur/entered}"].append(n);
+            else:
+                ret.update({f"{cur/entered}":[n]});
         else:
-            ret.update({f"{cur/entered}":[n]});
+            if "0" in ret:
+                ret["0"].append(n);
+            else:
+                ret.update({"0":[n]});
+
         n -= 1;
         cur = 0;
     return (ret);
@@ -32,6 +39,7 @@ def run(arr, n):
         ret += i;
     return (ret);
 
-print(run([1,2], 4));
+assert(run([2,1,2,6,2,4,3,3], 5) == [3,4,2,1,5]);
+assert(run([4,4,4,4,4], 4) == [4,1,2,3]);
 
 
