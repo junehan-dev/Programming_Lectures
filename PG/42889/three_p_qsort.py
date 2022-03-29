@@ -8,7 +8,6 @@ def three_p_qsort(arr, start, end):
     gt_i = end;
 
     while (cur_i <= gt_i):
-    # DESC
         if arr[cur_i] > pivot:
             swap(arr, lt_i, cur_i);
             lt_i += 1;
@@ -18,18 +17,6 @@ def three_p_qsort(arr, start, end):
             gt_i -= 1;
         else:
             cur_i += 1;
- 
-    """ASC
-        if arr[cur_i] < pivot:
-            swap(arr, lt_i, cur_i);
-            lt_i += 1;
-            cur_i += 1;
-        elif arr[cur_i] > pivot:
-            swap(arr, gt_i, cur_i);
-            gt_i -= 1;
-        else:
-            cur_i += 1;
-    """
     if lt_i != start:
         three_p_qsort(arr, start, lt_i - 1);
     if gt_i != end:

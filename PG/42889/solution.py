@@ -16,6 +16,7 @@ def calc_ratio(stages, n):
         else:
             ret.update({f"{cur/entered}":[n]});
         n -= 1;
+        cur = 0;
     return (ret);
      
 def run(arr, n):
@@ -23,6 +24,7 @@ def run(arr, n):
     logs = calc_ratio(arr, n);
     keys = sorted(logs.keys(), reverse=True);
     ret = [];
+    print(logs);
     for k in keys:
         i = logs[k];
         if len(i) > 1:
@@ -30,5 +32,6 @@ def run(arr, n):
         ret += i;
     return (ret);
 
-print(run([1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,3,2,2,1,3,2,4,4], 3));
+print(run([1,2], 4));
+
 
