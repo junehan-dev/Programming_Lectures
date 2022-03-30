@@ -1,12 +1,24 @@
+from typing import List
+from doctest import testmod
+from math import sqrt
+
 class Solution:
     def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
-       pass     
+        """
+        >>> Solution().kClosest([[1,3],[-2,2]], 1);
+        [[-2,2]];
+        >>> Solution().kClosest([[3,3],[5,-1],[-2,4]], 2);
+        [[3,3],[-2,4]]
+        """
+        min_q = build(points);
+        return [del_min(min_q) for i in range(k)];
 
 def is_far(a, b):
-    ret = ((a[0] ** 2 + a[1] ** 2) - (b[0] ** 2 + b[1] ** 2));
-    if ret == 0:
-        return 0;
-    return (1 if ret > 0 else -1);
+    a = sqrt(a[0] ** 2 + a[1] ** 2);
+    b = sqrt(b[0] ** 2 + b[1] ** 2);
+    if (a > b):
+        return (1);
+    return (0);
 
 def build(srcs):
     ret = [];
@@ -32,7 +44,7 @@ def del_min(dest):
     while (not is_valid(dest, size, i)):
         l = i * 2 + 1;
         r = l + 1;
-        swap_i = l if dest[l] <= dest[r] else r;
+        swap_i = l if is_far(dest[l], dest[r]) > 0 else r;
         swap(dest, swap_i, i);
         i = swap_i;
     return (ret);
@@ -42,8 +54,9 @@ def is_valid(src, size, i):
     r = l + 1;
     if (size < r + 1):
        return True;
-    return True if src[i] <= src[l] and src[i] <= src[r] else False;
+    return True if is_far(src[i], src[l]) <= 0 and is_far(src[i], src[r]) <= 0 else False;
 
 def swap(src, s1, s2):
     src[s1], src[s2] = src[s2], src[s1];
 
+testmod();
