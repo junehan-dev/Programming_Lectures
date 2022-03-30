@@ -27,6 +27,7 @@ Index
    #. 110-Balanced_binary_tree_: `LeetCode: Balanced_binary_tree<https://leetcode.com/problems/balanced-binary-tree/>`_
    #. 215-Kth_largest_element_in_an_array_: `LeetCode: Kth_largest_element_in_an_array<https://leetcode.com/problems/kth-largest-element-in-an-array/submissions/>`_
    #. 147-Insertion_Sort_List_: `LeetCode: Insertion_Sort_List<https://leetcode.com/problems/insertion-sort-list/>`
+   #. 973-K_closest_points_to_origin_: `LeetCode: k-closest-points-to-origin<https://leetcode.com/problems/k-closest-points-to-origin/>`
 
 .. _328-OddEven_Linked_list: ./328-Odd_Even_Linked_list/
 .. _3-longest_substr: ./3-longest_substr/
@@ -48,4 +49,5 @@ Index
 .. _108-Convert_sorted_array_to_BST: ./108-Convert_sorted_array_to_BST/
 .. _110-Balanced_binary_tree: ./110-Balanced_binary_tree/
 .. _215-Kth_largest_element_in_an_array: ./215-Kth_largest_element_in_an_array/
-.. _147-Insertion_Sort_List_: ./147-Insertion_sort_list/
+.. _147-Insertion_Sort_List: ./147-Insertion_sort_list/
+.. _973-K_closest_points_to_origin: ./973-K_closest_points_to_origin/
