@@ -1,7 +1,31 @@
-from lib_minheap import build, swim
+from lib_minheap import build, insert, del_min
 
-d = [1,3,4];
+d = [];
 
 ret = build(d);
-swim(ret, 2);
+insert(ret, 4);
+insert(ret, 2);
+insert(ret, 1);
+insert(ret, 1);
 print(ret);
+
+min_out = del_min(ret);
+print(min_out);
+print(ret);
+
+min_out = del_min(ret);
+print(min_out);
+print(ret);
+
+min_out = del_min(ret);
+print(min_out);
+print(ret);
+
+min_out = del_min(ret);
+print(min_out);
+print(ret);
+
+min_out = del_min(ret);
+print(min_out);
+print(ret);
+

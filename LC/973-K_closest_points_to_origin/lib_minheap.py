@@ -1,19 +1,41 @@
 def build(srcs):
     ret = [];
-    [swim(ret, src) for src in srcs]
+    [insert(ret, src) for src in srcs]
 
     return (ret);
 
-def swim(dest, src, cmp_func = (lambda a, b: a - b)):
+def insert(dest, src, cmp_func = (lambda a, b: a - b)):
     dest.append(src);
     i = len(dest);
     while i // 2 != 0 and cmp_func(dest[i // 2 - 1], dest[i - 1]) > 0:
-        _swap(dest, i - 1, i//2 - 1);
+        swap(dest, i - 1, i//2 - 1);
         i //= 2;
 
     return (i - 1);
 
-def _swap(src, s1, s2):
+def del_min(dest):
+    if not dest:
+        return None;
+    swap(dest, 0, -1);
+    ret = dest.pop();
+    i = 0;
+    size = len(dest);
+    while (not is_valid(dest, size, i)):
+        l = i * 2 + 1;
+        r = l + 1;
+        swap_i = l if dest[l] <= dest[r] else r;
+        swap(dest, swap_i, i);
+        i = swap_i;
+    return (ret);
+        
+def is_valid(src, size, i):
+    l = i * 2 + 1;
+    r = l + 1;
+    if (size < r + 1):
+       return True;
+    return True if src[i] <= src[l] and src[i] <= src[r] else False;
+
+def swap(src, s1, s2):
     src[s1], src[s2] = src[s2], src[s1];
 
 
