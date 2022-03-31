@@ -5,10 +5,11 @@ Index
 -----
    - 42586_: Stack_Queue/Develop_Feature (ONGOING)
    - 42583_: Stack_Queue/Trucks_acrossing_the_Bridge (ONGOING)
-   - 43165_: Tree/Leaf Target number: https://programmers.co.kr/learn/courses/30/lessons/43165
-   - 49994_: Graph/unique walk path: https://programmers.co.kr/learn/courses/30/lessons/49994
+   - 43165_: Tree/Leaf Target number
+   - 49994_: Graph/unique walk path
    - 42889_: Search
    - 42747_: sort and search
+   - 17686_: sort filename
 
 .. _42586: ./42586/
 .. _42583: ./42583/
@@ -16,3 +17,4 @@ Index
 .. _49994: ./49994/
 .. _42889: ./42889/
 .. _42747: ./42747/
+.. _17686: ./17686/
