@@ -48,10 +48,9 @@ h_indices = [3,0,6,1,55,5,5];
 ret = build(h_indices)
 i = 1;
 h_idx = del_max(ret);
-print(len(ret));
 while (len(ret) > 0) and i < h_idx:
-    print(h_idx, i)
     h_idx = del_max(ret);
     i += 1;
-print(h_idx, i)
+
+return h_idx if i >= h_idx else 0;
 
