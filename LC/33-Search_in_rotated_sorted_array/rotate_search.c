@@ -1,25 +1,16 @@
 #include <stdio.h>
+
 int	find_min(int *nums, int n)
 {
 	int	l = 0;
-	int	m = n / 2;
 	int	h = n - 1;
+	int	m = h / 2;
 
-	if (nums[0] < nums[n-1])
-		return (0);
-
-	while (l <= h) {
-		if (nums[m] < nums[l]) {
+	while (l < h) {
+		if (nums[m] < nums[h]) {
 			h = m;
-			l += 1;
-			printf("%d mid < start %d\n", nums[m], nums[l]);
-		}
-		else if (nums[m] > nums[h]) {
-			l = m + 1;
-			printf("%d mid > end %d\n", nums[m], nums[h]);
 		} else {
-			printf("found %d lowest\n", nums[m]);
-			return (m);
+			l = m + 1;
 		}
 		m = (h + l) / 2;
 	}
@@ -28,21 +19,46 @@ int	find_min(int *nums, int n)
 
 int	search(int *nums, int n, int t)
 {
-	int min;
+	int l;
+	int h;
+	int	mid;
 
-	if (t > n-1)
+	l = find_min(nums, n);
+	if (nums[0] < nums[n - 1]) {
+		l = 0;
+		h = n - 1;
+	} else if (t >= nums[0] && t <= nums[l - 1]) {
+
+		l = 0;
+		h = l - 1;
+	} else if (t >= nums[l] && t <= nums[n - 1]) {
+		l = l;
+		h = n - 1;
+	} else {
 		return (-1);
+	}
 
-	min = find_min(nums, n);
-	printf("min: %d\n", min);
-	printf("min at %d: %d\n", t,min+t);
-	return (((min + t) > (n - 1)) ? nums[min + t - n] : nums[min + t]);
+	mid = (l + h) / 2;
+	while (l < h) {
+		if (t > nums[mid]) {
+			l = mid + 1;
+		} else if (t < nums[mid]) {
+			h = mid - 1;
+		} else {
+			return (mid);
+		}
+		mid = (l + h) / 2;
+	}
+	printf("mid : %d, l : %d, h : %d\n", mid, l, h);
+	return (nums[mid] == t ? mid : -1);
 }
+
 int main(void)
 {
-	int test[5] = {3,4,5,0,1};
-	int ret = search(test, 5, 1);
-	printf("%d is %d lowest",ret, 1); 
+	int test[] = {2};
+	int ret = search(test,1, 2);
+
+	printf("%d", ret);
 	return (0);
 }
 
