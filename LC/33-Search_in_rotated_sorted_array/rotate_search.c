@@ -8,13 +8,13 @@ int	find_min(int *nums, int n)
 
 	while (l < h) {
 		if (nums[m] < nums[h]) {
-			h = m;
+			h = m - 1;
 		} else {
 			l = m + 1;
 		}
 		m = (h + l) / 2;
 	}
-	return (m);
+	return (l);
 }
 
 int	search(int *nums, int n, int t)
@@ -23,14 +23,15 @@ int	search(int *nums, int n, int t)
 	int h;
 	int	mid;
 
+	if (n == 1)
+		return ((*nums == t) ? 0 : -1);
 	l = find_min(nums, n);
 	if (nums[0] < nums[n - 1]) {
 		l = 0;
 		h = n - 1;
 	} else if (t >= nums[0] && t <= nums[l - 1]) {
-
-		l = 0;
 		h = l - 1;
+		l = 0;
 	} else if (t >= nums[l] && t <= nums[n - 1]) {
 		l = l;
 		h = n - 1;
@@ -39,6 +40,7 @@ int	search(int *nums, int n, int t)
 	}
 
 	mid = (l + h) / 2;
+	printf("mid : %d, l : %d, h : %d\n", mid, l, h);
 	while (l < h) {
 		if (t > nums[mid]) {
 			l = mid + 1;
@@ -55,8 +57,8 @@ int	search(int *nums, int n, int t)
 
 int main(void)
 {
-	int test[] = {2};
-	int ret = search(test,1, 2);
+	int test[] = {3, 5, 1};
+	int ret = search(test,3, 5);
 
 	printf("%d", ret);
 	return (0);
