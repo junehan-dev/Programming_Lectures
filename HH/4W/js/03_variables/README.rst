@@ -17,7 +17,7 @@ How names work
 
 3. 자바스크립트에 예약된 이름은 아래와 같다.
 
-.. code-block: javascript
+.. code-block:: javascript
 
     arguments, await, break, case, catch, class, const, continue, debugger, default, delete, do ,else, enum, eval, extends false, finally, for, function, if ,implements, import, in, Infinity, instanceof, interface, let, NaN, new, null, package, private, protected, public, return, static, super, switch, this, throw, true, try, typeof, undefine, var, while, with, yield
 
