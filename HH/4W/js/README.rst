@@ -1,10 +1,34 @@
-02 How javascript work?
------------------------
+02 defer, async and strict mode
+--------------------------------
+
+``async``
+   고전적인 스크립트에게 만약 async속성이 존재한다면, 고전적인 스크립트는 병렬적으로 Fectch reqeust를 수행하고, parsed, evaluated된다.
+   모듈 스크립트에 있어서 async속성은 그의 의존성들은 모두 다른 queue에서 실행된다. 그러므로 그들 또한 병렬적인 실행시간을 가지게 된다.
+   이 속성은 브라우저의 parser-blocking js를 제거할 수 있다. 브라우저가 단계적인 처리의 IO WAIT를 기다리지 않아도 되는데 이 경우는 defer와 비슷한 효과를 갖는다.
+
+``defer``
+   이 boolean속성은 브라우저에게 해당 스크립트가 document parse이후헤 execution을 희망한다고 지시한다. 하지만 이것은 ``DOMContentLoaded`` 이전의 것이다.
+
+   ``defer`` 속성은 document에서 그들이 읽어 진 이후에 실행된다.
+   이 속성은 async와 마찬가지로, 브라우저의 Parser-blocking js를 제거할 수 있다. async와 동일한 병렬처리에 포함되지만, 해당 문서의실행(evaluation)시점을 언제로 두는지에 대한 차이가 있다.
 
 
+``strict``
+   strict mode는 ES5에 소개되었고, 내부적으로 sloppy mode를 제거하는것으로 변칙성의 자바스크립트를 제한함으로 허용하지 않는다.
+   이것은 단순히 Subset이 아니다. 내부적으로 normal mode가 사용하는 semantics 혹은 token parse가 다르다.
+   strict모드는 아래에서 기본 Semantics와 차이가 있다.
 
+      1. js의 조용한 에러제거하고 throw에러 방식으로 변경한다.
+      2. js 엔진이 최적화하기 어렵게 만들었던 실수들을 고쳤다.
+      3. 미래의 예정된 ECMA사양에 포함된 syntax를 금지한다.
 
+   Strict모드는 기존 자바스크립트가 수행할 수 있었던 허용중 대표적으로 아래와 같은 것들을 제한한다.
 
+   - TypeError
+      - ``var undefined = 5;, var Infinity = 5``
+      - ``var obj2 = { get x() {return 17;} }; obj2.x = 4;``
+      - ``delete Object.prototype``
+   
 01 What is Javascript 
 ---------------------
 
