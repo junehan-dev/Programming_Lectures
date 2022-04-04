@@ -31,10 +31,10 @@ def find_shortest_delay(signal_q, left, logs, n):
         print(signal_to);
         if logs[signal_to - 1] == -1 or logs[signal_to - 1] > delay:
             logs[signal_to - 1] = delay;
-            adjs = [set_delay_acc(sig, delay) or sig for sig in filter(lambda sig: sig[0] == signal_to, left) if sig];
-            print("ajs", adjs);
+            adjs = [_ for _ in filter(lambda sig: sig[0] == signal_to, left)];
             if adjs:
-                signal_q.append(*adjs);
+                list(map(lambda sig: set_delay_acc(sig, delay), adjs));
+                [signal_q.append(signal) for signal in adjs];
             else:
                 print("NOT!");
             print(signal_q);
@@ -42,6 +42,14 @@ def find_shortest_delay(signal_q, left, logs, n):
     
 
     return logs;
+
 times = [[2,1,1],[2,3,1],[3,4,1]]; n = 4; k = 2;
-networkDelayTime(times, n, k);
+assert(networkDelayTime(times, n, k) == 2);
+
+times = [[1,2,1]]; n = 2; k = 1;
+assert(networkDelayTime(times, n, k) == 1);
+
+times = [[1,2,1]]; n = 2; k = 2;
+assert(networkDelayTime(times, n, k) == -1);
+
 
