@@ -28,6 +28,7 @@ Index
    #. 215-Kth_largest_element_in_an_array_: `LeetCode: Kth_largest_element_in_an_array<https://leetcode.com/problems/kth-largest-element-in-an-array/submissions/>`_
    #. 147-Insertion_Sort_List_: `LeetCode: Insertion_Sort_List<https://leetcode.com/problems/insertion-sort-list/>`
    #. 973-K_closest_points_to_origin_: `LeetCode: k-closest-points-to-origin<https://leetcode.com/problems/k-closest-points-to-origin/>`
+   #. 743-Network_delay_time_: `LeetCode: k-closest-points-to-origin<https://leetcode.com/problems/network-delay-time/>`
 
 .. _328-OddEven_Linked_list: ./328-Odd_Even_Linked_list/
 .. _3-longest_substr: ./3-longest_substr/
@@ -51,3 +52,4 @@ Index
 .. _215-Kth_largest_element_in_an_array: ./215-Kth_largest_element_in_an_array/
 .. _147-Insertion_Sort_List: ./147-Insertion_sort_list/
 .. _973-K_closest_points_to_origin: ./973-K_closest_points_to_origin/
+.. _743-Network_delay_time: ./743-Network_delay_time/
