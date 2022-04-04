@@ -19,23 +19,19 @@ def set_data(times, k):
     left = list(filter(lambda sig: k not in [sig[0], sig[1]], times));
     return (ret, left);
 
-def set_delay_acc(signal, delay):
-    signal[-1] += delay;
-
 def find_shortest_delay(signal_q, left, logs, n):
     while len(signal_q):
-        signal   = signal_q.popleft();
+        signal = signal_q.popleft();
         print(signal);
         signal_to       = signal[1];
         delay           = signal[-1];
         print(signal_to);
         if logs[signal_to - 1] == -1 or logs[signal_to - 1] > delay:
             logs[signal_to - 1] = delay;
-            adjs = [[] + _ for _ in filter(lambda sig: sig[0] == signal_to, left)];
+            adjs = [_ for _ in filter(lambda sig: sig[0] == signal_to, left)];
             if adjs:
-                [sig for sig in adjs];
-                list(map(lambda sig: set_delay_acc(sig, delay), adjs));
-                [signal_q.append(signal) for signal in adjs];
+                adjs = [[signal[0], signal[1], signal[2] + delay] for signal in adjs];
+                [_ for _ in map(lambda signal:signal_q.append(signal), adjs)];
             print("Q:",signal_q);
             print("log:",logs);
 
