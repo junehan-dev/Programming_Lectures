@@ -58,8 +58,15 @@ Whats more
 for in for of
 ^^^^^^^^^^^^^
 
-   - for in과 for of 모두 객체에 포함되는 속성을 이용하여 for loop를 사용할 수 있습니다. 표현의 간소함과 효율적인 방식으로 일반적으로 많이 사용하는 패턴인 연속적인 데이터를 순차적으로 1회씩 이라는 절차를 위해 만들어 주었습니다. for in 의 경우 Object.keys()로 조회하면 얻게되는 array의 index, object의 속성키등을 대상으로 순회를 하는 반면, Object.values()로 얻을 수 있는 대상에서는 대부분 for of를 사용할 수 있습니다. 단적으로 array iterator generator등이 대상인데, 값을 순차적으로 추출하는 것이 논리적으로 맞다 라고 판단되는 객체를 대상으로 Object.values를 수행할 수 있고, iterator, generator같은 경우는 전체가 물질화 되지 않은 상태로 값들을 loop당 한번씩 추출하기 때문에 대용량데이터 처리시에 이점이 있습니다.
+for대신 사용해야 할 이유
+   for in과 for of 모두 객체에 포함되는 속성을 이용하여 for loop를 사용할 수 있습니다. 표현의 간소함과 효율적인 방식으로 일반적으로 많이 사용하는 패턴인 연속적인 데이터를 순차적으로 1회씩 이라는 절차를 위해 만들어 주었습니다.
 
+for in(대상: enumerable properties, 셀 수 있음을 포함합니다.)
+   for in 의 경우, for만으로 해결할 수 없는 무작위 Object를 대상으로 object를 for문으로 순회할 수 있도록 만들어졌습니다. Object.keys()로 조회하면 얻게되는 array의 index, object의 키등으로 forloop를 하며 정확히 object를 겨냥해서 출시하였습니다.
+
+for of(대상: iterable properties, 순서 개념을 포함합니다.)
+    iterable을 대상으로(An object that has iterable properties) Object.values()로 얻을 수 있는 대상에서는 대부분 for of를 사용할 수 있습니다.
+     단순히 array의 element를 순회하는 것도 가능하지만, 최신 스펙으로 등장한 만큼 iterator, generator등으로 대용량데이터를 순차처리할 경우 함께 간편한 인터페이스를 지원하기 위해 출시하였습니다.
 
 Put vs Patch vs Post
 ^^^^^^^^^^^^^^^^^^^^
@@ -70,5 +77,24 @@ HTTP PUT METHOD (1.1)
 HTTP PATCH METHOD (2010)
    full update의 대신 부분적인 업데이트로 새로운 자원을 생성하기 위해 만들어 졌습니다.
 
+```js
+var token = getParameterByName('access_token');
+
+fetch('https://api.myapp.de/api/v2/users/me', {
+      headers: {
+        "Authorization": `bearer${token}`,
+        "Content-type": "application/json; charset=UTF-8"
+      },
+      method: 'PATCH',
+      body: JSON.stringify({
+        id: id,
+        idIwantToUpdate: idyouwant,
+        ringNumber: ringNumberYouwantToChange
+      });
+    });
+
+```
+
 Put과 Patch사이의 가장 큰 차이는 Put의 경우 요청URI를 사용하여 원본의 버전을 대체할 수정된 버전을 제공하는 반면 Patch의 경우 원본을 수정하기 위한 명령의 집합을 사용하여 자원을 수정합니다.
-   
+
+
