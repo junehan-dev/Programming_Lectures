@@ -77,23 +77,22 @@ HTTP PUT METHOD (1.1)
 HTTP PATCH METHOD (2010)
    full update의 대신 부분적인 업데이트로 새로운 자원을 생성하기 위해 만들어 졌습니다.
 
-```js
-var token = getParameterByName('access_token');
+.. code-block:: js
+   var token = getParameterByName('access_token');
 
-fetch('https://api.myapp.de/api/v2/users/me', {
-      headers: {
-        "Authorization": `bearer${token}`,
-        "Content-type": "application/json; charset=UTF-8"
-      },
-      method: 'PATCH',
-      body: JSON.stringify({
-        id: id,
-        idIwantToUpdate: idyouwant,
-        ringNumber: ringNumberYouwantToChange
-      });
-    });
+   fetch('https://api.myapp.de/api/v2/users/me', {
+         headers: {
+           "Authorization": `bearer${token}`,
+           "Content-type": "application/json; charset=UTF-8"
+         },
+         method: 'PATCH',
+         body: JSON.stringify({
+           id: id,
+           idIwantToUpdate: idyouwant,
+           ringNumber: ringNumberYouwantToChange
+         });
+       });
 
-```
 
 Put과 Patch사이의 가장 큰 차이는 Put의 경우 요청URI를 사용하여 원본의 버전을 대체할 수정된 버전을 제공하는 반면 Patch의 경우 원본을 수정하기 위한 명령의 집합을 사용하여 자원을 수정합니다.
 
