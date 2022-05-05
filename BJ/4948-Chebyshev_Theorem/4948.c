@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 char    *itoa(int n);
 int		get_num(void);
@@ -8,17 +9,52 @@ int		count_primes(int n);
 
 int		main()
 {
-	char *s;
-	int n;
-	int i;
+	char	*s;
+	int		n;
+	char	buf[BUFSIZ];
+	char	*buf_pt;
 
+	buf_pt = buf;
 	while ((n = get_num())) {
-		s = itoa(n);
-		write(STDOUT_FILENO, s, strlen(s));
+		s = itoa(count_primes(n));
+		strcpy(buf_pt, s);
+		buf_pt += strlen(s);
 		free(s);
+		*buf_pt++ = '\n';
 	}
 
-	return 0;
+	*(buf_pt - 1) = '\0';
+	write(STDOUT_FILENO, buf, strlen(buf));
+
+	return (0);
+}
+
+int count_primes(int n) {
+	static int	primes[246913];
+	int			i;
+	int			mul;
+	int			ret;
+
+	if (!primes[0]) {
+		primes[0] = 1;
+		primes[1] = 1;
+		primes[246912] = 1;
+		i = 1;
+		while (i < 123456) {
+			if (!primes[++i]) {
+				mul = 2;
+				while (i * mul < 246913)
+					primes[i * mul++] = 1;
+			}
+		}
+	}
+
+	i = n;
+	ret = 0;
+	while (i++ < n * 2)
+		ret = !primes[i] ? ret + 1: ret;
+
+	return (ret);
 }
 
 char    *itoa(int n)
@@ -38,15 +74,18 @@ char    *itoa(int n)
         *buf = '-';
         left = ~n + 1;
     }
+
     while (left >= 10)
     {
         *buf_pt-- = '0' + (left % 10);
         left /= 10;
     }
+
     *buf_pt = '0' + left;
     buf_pt = (*buf == '-') ? (buf_pt - 1) : buf_pt;
     if (*buf == '-')
         *buf_pt = '-';
+
     return (strdup(buf_pt)); 
 }
 
