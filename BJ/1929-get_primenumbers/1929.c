@@ -17,7 +17,7 @@ int		main()
 }
 
 void	count_primes(int start, int end) {
-	char	primes[1000001] = {0};
+	char	primes[1000001] = {1, 0};
 	char	buf[8];
 	int		i;
 	int		buflen;
@@ -30,6 +30,7 @@ void	count_primes(int start, int end) {
 		return ;
 	}
 
+	primes[2] = 0;
 	i = 3;
 	while (i < 50000) {
 		if (!primes[i]) {
@@ -41,9 +42,10 @@ void	count_primes(int start, int end) {
 	}
 
 	buf[0] = 0;
-	if (start <= 2) 
+	if (start <= 2)  {
 		write(STDOUT_FILENO, "2\n", 2);
-	start = start == 1 ? 3 : start;
+		start = 3;
+	}
 	start = start % 2 ? start : start + 1;
 	while (start <= end) {
 		if (!primes[start]) {
