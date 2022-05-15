@@ -12,6 +12,8 @@ Index
    - 17686_: sort filename
    - 43105_: DP/natural number triangle
    - 43238_: DP/Immigration optimization
+   - 17683_: That Song
+   - 64061_: Stack/Crain game
 
 .. _42586: ./42586/
 .. _42583: ./42583/
@@ -22,3 +24,5 @@ Index
 .. _17686: ./17686/
 .. _43105: ./43105/
 .. _43238: ./43238/
+.. _17683: ./17683/
+.. _64061: ./64061/
