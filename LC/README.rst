@@ -1,8 +1,16 @@
 LeetCode Algorithm Solves
 =========================
 
-Index
------
+Greedy
+^^^^^^
+
+   #. 2160-minimum_sum_of_four_digit_number_after_splitting_digits_\: LeetCode-2160
+
+.. _2160-minimum_sum_of_four_digit_number_after_splitting_digits: ./2160-minimum_sum_of_four_digit_number_after_splitting_digits/
+
+OLD
+---
+
    1. 3-longest_substr_\: `LeetCode: Longest substring <https://leetcode.com/problems/longest-substring-without-repeating-characters/>`_
    #. 21-merge_two_sorted_array_\: `LeetCode: merge two sorted list <https://leetcode.com/problems/merge-two-sorted-lists/>`_
    #. 15-3sum_\: `LeetCode: 3Sum <https://leetcode.com/problems/3sum/>`_
