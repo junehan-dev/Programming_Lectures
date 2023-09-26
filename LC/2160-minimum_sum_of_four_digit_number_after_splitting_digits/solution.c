@@ -1,55 +1,49 @@
 #include <stdio.h>
 
-void swap(int *s1, int *s2);
 int extract_min(int *num);
 
 int	minimumSum(int num) {
-	int min;
 	int ret;
-	
-	ret = (extract_min(&num) + extract_min(&num)) * 10;
-	ret += extract_min(&num);
-	ret += extract_min(&num);
+	int mul;
 
+	mul = 1;
+	ret = 0;
+	while (num / 10) {
+		mul = !mul;
+		ret += extract_min(&num); 
+		ret *= (mul) ? 10 : 1;
+		num /= 10;
+	}
+	ret += num;
 	return (ret);
 }
 
 int extract_min(int *num) {
-	int min;
-	int left;
-	int cmp;
-	int pos;
+	int tmp;
+	int div;
 
-	left = 0;
-	min = *num % 10;
-	*num /= 10;
-	pos = 1;
-	while (*num) {
-		cmp = *num % 10;
-		*num /= 10;
-		(min > cmp) ? swap(&min, &cmp): 0;
-		left += cmp * pos;
-		pos *= 10;
+	if (!(*num / 10))
+		return (-1);
+
+	div = 10;
+	while (*num / div) {
+		tmp = (*num / div) % 10;
+		if ((*num % 10) > tmp) {
+		 	*num -= tmp * div;
+			*num += *num % 10 * div;
+			*num -= *num % 10;
+			*num += tmp;
+		}
+		div *= 10;
 	}
 
-	*num = left;
-	return (min);
-}
-
-void swap(int *s1, int *s2) {
-	int tmp;
-
-	tmp = *s1;
-	*s1 = *s2;
-	*s2 = tmp;
-
-	return;
+	return (*num % 10);
 }
 
 int main(void) {
 	int v;
 
-	v = 8100;
+	v = 1080344;
 	printf("%d", minimumSum(v));
 	return (0);
 }
