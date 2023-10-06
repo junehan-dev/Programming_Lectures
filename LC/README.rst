@@ -4,9 +4,11 @@ LeetCode Algorithm Solves
 Greedy
 ^^^^^^
 
-   #. 2160-minimum_sum_of_four_digit_number_after_splitting_digits_\: LeetCode-2160
+   #. 2160-minimum_sum_of_four_digit_number_after_splitting_digits_\: find minimum and extract them, add 2 by 2.
+   #. 561-Array_partition-i_\: set the lowest divation of two pair of numbers, and add lower side of sets.
 
 .. _2160-minimum_sum_of_four_digit_number_after_splitting_digits: ./2160-minimum_sum_of_four_digit_number_after_splitting_digits/
+.. _561-Array_partition-i: ./561-Array_partition-i/
 
 OLD
 ---
@@ -15,7 +17,6 @@ OLD
    #. 21-merge_two_sorted_array_\: `LeetCode: merge two sorted list <https://leetcode.com/problems/merge-two-sorted-lists/>`_
    #. 15-3sum_\: `LeetCode: 3Sum <https://leetcode.com/problems/3sum/>`_
    #. 20-Valid_Parentheses_\: `LeetCode: Valid Parentheses <https://leetcode.com/problems/valid-parentheses/>`
-   #. 561-Array_partition-i_\: `LeetCode: Array Partition-i <https://leetcode.com/problems/array-partition-i/>`_
    #. 234-Pelindrome_Linked_List_\: `LeetCode: palindrome-linked-list <https://leetcode.com/problems/palindrome-linked-list/>`_
    #. 206-Reverse_Linked_List_\: `LeetCode: Reverse-linked-list <https://leetcode.com/problems/reverse-linked-list/>`_
    #. 328-OddEven_Linked_list_\: `LeetCode: Odd-even-linked-list <https://leetcode.com/problems/odd-even-linked-list/>`_
