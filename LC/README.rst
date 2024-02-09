@@ -1,10 +1,11 @@
-LeetCode Algorithm Solves
+LetCode Algorithm Solves
 =========================
 
 Binary Tree
 ^^^^^^^^^^^
 
    #. 104-Maximum_depth_of_binary_tree_\: calcuate the depth of binary tree
+   #. 100-Same_tree_\: check both tree are same(value and structure)
 
 Greedy
 ^^^^^^
@@ -67,3 +68,4 @@ OLD
 .. _2160-minimum_sum_of_four_digit_number_after_splitting_digits: ./2160-minimum_sum_of_four_digit_number_after_splitting_digits/
 .. _561-Array_partition-i: ./561-Array_partition-i/
 .. _104-Maximum_depth_of_binary_tree: ./104-Maximum_depth_of_binary_tree/
+.. _100-Same_tree: ./100-Same_tree/
