@@ -9,6 +9,9 @@ int	maxDepth(struct TreeNode *root)
 	int	left;
 	int right;
 	
+	if (!root)
+		return (0);
+
 	left = 1;
 	right = 1;
 	
@@ -18,5 +21,4 @@ int	maxDepth(struct TreeNode *root)
 		right += maxDepth(root->left);
 
 	return (left > right ? left : right);
-
 }
