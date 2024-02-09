@@ -1,14 +1,16 @@
 LeetCode Algorithm Solves
 =========================
 
+Binary Tree
+^^^^^^^^^^^
+
+   #. 104-Maximum_depth_of_binary_tree_\: calcuate the depth of binary tree
+
 Greedy
 ^^^^^^
 
    #. 2160-minimum_sum_of_four_digit_number_after_splitting_digits_\: find minimum and extract them, add 2 by 2.
    #. 561-Array_partition-i_\: set the lowest divation of two pair of numbers, and add lower side of sets.
-
-.. _2160-minimum_sum_of_four_digit_number_after_splitting_digits: ./2160-minimum_sum_of_four_digit_number_after_splitting_digits/
-.. _561-Array_partition-i: ./561-Array_partition-i/
 
 OLD
 ---
@@ -62,3 +64,6 @@ OLD
 .. _147-Insertion_Sort_List: ./147-Insertion_sort_list/
 .. _973-K_closest_points_to_origin: ./973-K_closest_points_to_origin/
 .. _743-Network_delay_time: ./743-Network_delay_time/
+.. _2160-minimum_sum_of_four_digit_number_after_splitting_digits: ./2160-minimum_sum_of_four_digit_number_after_splitting_digits/
+.. _561-Array_partition-i: ./561-Array_partition-i/
+.. _104-Maximum_depth_of_binary_tree: ./104-Maximum_depth_of_binary_tree/
