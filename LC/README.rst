@@ -6,6 +6,7 @@ Binary Tree
 
    #. 104-Maximum_depth_of_binary_tree_\: calcuate the depth of binary tree
    #. 100-Same_tree_\: check both tree are same(value and structure)
+   #. 226-invert_binary_tree_: Invert direction of all children
 
 Greedy
 ^^^^^^
@@ -34,7 +35,6 @@ OLD
    #. 78-Subsets_: `LeetCode: Subsets<https://leetcode.com/problems/subsets/>`_
    #. 51-N_Queens_: `LeetCode: Subsets<https://leetcode.com/problems/n-queens/>`_
    #. 297-serialize_deserialize_binary_tree_: `LeetCode: serialize_deserialize_binary_tree<https://leetcode.com/problems/serialize-and-deserialize-binary-tree>`_
-   #. 226-invert_binary_tree_: `LeetCode: invert_binary_tree<https://leetcode.com/problems/invert-binary-tree>`_
    #. 108-Convert_sorted_array_to_BST_: `LeetCode: Convert_sorted_array_to_BST<https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/>`_
    #. 110-Balanced_binary_tree_: `LeetCode: Balanced_binary_tree<https://leetcode.com/problems/balanced-binary-tree/>`_
    #. 215-Kth_largest_element_in_an_array_: `LeetCode: Kth_largest_element_in_an_array<https://leetcode.com/problems/kth-largest-element-in-an-array/submissions/>`_
